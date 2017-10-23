@@ -14,6 +14,10 @@ describe "postcode" do
     expect(@postcode["result"]["quality"]).to be_between(1, 9).inclusive
   end
 
+  it "quality should equal 1" do
+    expect(@postcode["result"]["quality"]).to eq(1)
+  end
+
   it "longitude should be a number between 0 and 100" do
     expect(@postcode["result"]["longitude"]).to be_between(0, 100).inclusive
   end
@@ -58,7 +62,7 @@ describe "postcode" do
   end
 
   it "primary care trust region should be a string" do
-    expect(@postcode["result"]["european_electoral_region"]).to be_kind_of(String)
+    expect(@postcode["result"]["primary_care_trust"]).to be_kind_of(String)
   end
 
   it "region should be a string" do
@@ -93,9 +97,9 @@ describe "postcode" do
     expect(@postcode["result"]["parish"]).to be_kind_of(String)
   end
 
-  # it "admin county should be set to null" do
-  #   expect(@postcode["result"]["admin_county"]).to be_kind_of(Null)
-  # end
+  it "admin county should be set to null" do
+    expect(@postcode["result"]["admin_county"]).to eq(nil)
+  end
 
   it "admin ward should be a string" do
     expect(@postcode["result"]["admin_ward"]).to be_kind_of(String)
