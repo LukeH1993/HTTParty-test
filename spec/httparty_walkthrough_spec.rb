@@ -45,6 +45,10 @@ describe "postcode" do
     expect(@postcode["result"]["country"]).to be_kind_of(String)
   end
 
+  it "country should be a England" do
+    expect(@postcode["result"]["country"]).to eq("England")
+  end
+
   it "nhs ha should be a string" do
     expect(@postcode["result"]["nhs_ha"]).to be_kind_of(String)
   end
@@ -105,12 +109,20 @@ describe "postcode" do
     expect(@postcode["result"]["admin_ward"]).to be_kind_of(String)
   end
 
+  it "admin ward should be Chadwell St Mary" do
+    expect(@postcode["result"]["admin_ward"]).to eq("Chadwell St Mary")
+  end
+
   it "ccg should be a string" do
     expect(@postcode["result"]["ccg"]).to be_kind_of(String)
   end
 
   it "nuts should be a string" do
     expect(@postcode["result"]["nuts"]).to be_kind_of(String)
+  end
+
+  it "nuts should be Thurrock" do
+    expect(@postcode["result"]["nuts"]).to eq("Thurrock")
   end
 
   it "admin district in codes should be a string" do
